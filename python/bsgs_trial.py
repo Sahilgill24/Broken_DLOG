@@ -9,7 +9,7 @@ m= 101
 
 
 a = gmpy2.powmod(g, r, p)
-b = gmpy2.powmod(g, 2718, p)
+b = gmpy2.powmod(g, 102, p)
 print(a)
 print(b)
 
