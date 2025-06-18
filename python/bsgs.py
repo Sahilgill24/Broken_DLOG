@@ -14,26 +14,11 @@ print(f"gcd(c, p-1) = {gmpy2.gcd(c, p-1)}")
 # We need to find r first, then we can solve for x
 # But let's assume we have some candidate values for r
 
-# For demonstration, let's assume r = 0 and solve for x
-r_candidate = 0
-print(f"\nSolving for x with r = {r_candidate}:")
-x_solutions = solve_discrete_log_equation(t, r_candidate, c, p)
-
-# Let's also try with the actual r value from BSGS if we can compute it
-print(f"\nComputing r using BSGS...")
 
 c_inv = gmpy2.invert(c, p)
 
 # C_inv = 14357963798626187026499432126787177167115005402967250307187193237250756605185484584793813417598873074777055708150163705952201642103551468556354873807792280279754465155581157863331685798074476743014649126412499086987808909845198463645575374856392748421206674892889330487364289773433167884491989371562240667844068678278819543938079635867210454463230316833812511053154473918520118928303263139730688411843752678276878943889766058221397555554033467733932166735964762827725336287594452432596746732358135287612067791025040685250240615663398037551344084394456507469317272726697968242495678743835422721587869800574238715847560
-# verification to be done here itself, just the cuda code is tough part
-# As t = r + cx mod (p-1)
-# t-r = cx mod (p-1)
-# take to the power of g now , these both mod p 
-# as we know g^x = g^(x mod p-1) 
-# we get the relation as below
-# g ^ (t-r) = h^c   
-# further simplified to g^r = g^t * (h^c)^-1 
-# which should be equal to a and it is
+
 hc = gmpy2.powmod(h,c,p)
 hc_inv = gmpy2.invert(hc, p)
 gr = gmpy2.mul(gmpy2.powmod(g, t, p),hc_inv)
@@ -45,8 +30,7 @@ gr = gmpy2.mul(gmpy2.powmod(g, t, p),hc_inv)
 # we know t is approx 1200~1300 bits and r is 50 bits , and P is 2048 bits 
 # r belongs to range 0 to 2^50  
 
-# will try doing this on google colab
-# or ssh on their server 
+
 
 ## using BSGS, resources. 
 # https://www.youtube.com/watch?v=007MVsELvQw
