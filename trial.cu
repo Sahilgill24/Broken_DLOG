@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <cstdlib>
 
+// first time writing CUDA 
+
+
 // kernel to compute our value. 
 // this is called from the CPU, but runs on the GPU.
 __global__ void bs_kernel(int M, int p, const int *lookup_table, int *j, int g) {
