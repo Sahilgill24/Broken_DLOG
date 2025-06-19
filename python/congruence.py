@@ -30,3 +30,5 @@ def congruence(t,r,c,p,g,h):
     return None
 #x = 129741816436586536192511069033522723797805991085207391260653840826086090109
 print(congruence(t, r, c, p,g,h))
+print(" h",h)
+print("g^x mod p",gmpy2.powmod(g,congruence(t, r, c, p,g,h), p))
