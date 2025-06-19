@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <cstdlib>
 
-// first time writing CUDA 
+
 
 
 // kernel to compute our value. 
@@ -13,8 +13,7 @@ __global__ void bs_kernel(int M, int p, const int *lookup_table, int *j, int g) 
         lookup_table[j] = idx % p;
         j = (j * g) % p;
         // would this work parallely ? , not sure
-        // use the pollard rho as a reference 
-        // but write a basic schematic
+
     }
 }
 

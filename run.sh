@@ -8,4 +8,4 @@ g++ cpp/bsgs.cpp \
 
 
 
-# This is my command for MAC device, won't run on Linux or others
+# This is for mac device , to test on Linux simply remove the -I and -L flags
