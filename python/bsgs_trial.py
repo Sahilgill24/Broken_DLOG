@@ -8,10 +8,7 @@ a = 1307
 m= 101
 
 
-a = gmpy2.powmod(g, r, p)
-b = gmpy2.powmod(g, 102, p)
-print(a)
-print(b)
+
 
 def baby_step_giant_step():
     e = 1
